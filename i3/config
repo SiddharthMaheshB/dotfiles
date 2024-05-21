@@ -9,8 +9,6 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-include $HOME/.config/i3/workspaces.conf
-
 set $m1 eDP-1
 set $m2 HDMI-1-0
 set $mod Mod1
