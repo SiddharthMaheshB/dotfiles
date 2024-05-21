@@ -25,6 +25,7 @@ grey = #61616C
 green = #25D865
 blue = #168ECA
 mauve = #490761
+
 [bar/main]
 
 width = 100%
@@ -50,8 +51,40 @@ module-margin = 0
 modules-left = arch space date space space space space space space spo space spotify
 modules-center = xworkspaces
 modules-right = cava space space space space space mic space pulseaudio space space space space backlight space separator space battery space separator space wlan space
+
+[bar/second]
+
+width = 100%
+height = 40pt
+radius = 10
+cursor-click = pointer
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+monitor = HDMI-1-0
+monitor-fallback = eDP-1
+
+font-0 = "JetBrainsMono Nerd Font Mono:size=11"
+font-1 = "Symbols Nerd Font  Mono:size=14"
+
+line-size = 4pt
+
+border-size = 3pt
+border-color = $(colors.blue)
+
+padding-left = 1
+padding-right = 1
+
+module-margin = 0
+
+modules-left = arch space date space space space space space space spo space spotify
+modules-center = xworkspaces
+modules-right = cava space space space space space mic space pulseaudio space space space space backlight space separator space battery space separator space wlan space
+
+
 [module/xworkspaces]
 type = internal/xworkspaces
+pin-workspaces = true
 
 label-active = 
 label-active-padding = 1
@@ -123,6 +156,7 @@ exec = ~/Scripts/media.sh
 interval = 1
 format = <label>
 label = %output%
+click-left = ~/Scripts/media.sh 1
 
 
 [settings]
@@ -167,7 +201,7 @@ format-charging = <animation-charging><label-charging>
 format-discharging = <ramp-capacity><label-discharging>
 label-charging = %percentage%%
 label-discharging =%percentage%%
-label-full = Full
+label-full =  100%
 label-low = LOW 
 
 ramp-capacity-0 = " "
