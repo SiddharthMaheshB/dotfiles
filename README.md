@@ -4,8 +4,7 @@
 ## Screenshots:
 ![2024-05-21_11-28](https://github.com/SiddharthMaheshB/dotfiles/assets/125998948/25935656-5706-434d-bbb5-17de5b58f7f0)
 ![2024-05-21_11-42](https://github.com/SiddharthMaheshB/dotfiles/assets/125998948/bf69512b-4464-4499-be9a-d6bfa0623664)
-![2024-05-21_11-45](https://github.com/SiddharthMaheshB/dotfiles/assets/125998948/f58cc16e-bd4d-44e4-b2c1-de2ff6e18715)
-
+![2024-05-21_11-50](https://github.com/SiddharthMaheshB/dotfiles/assets/125998948/4fde046f-dd5d-44ba-bf3b-a4220ef48e41)
 
 
 ### Installation:
