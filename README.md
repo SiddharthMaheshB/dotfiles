@@ -1,4 +1,5 @@
 # Dotfiles for my i3wm setup
+(this is still very WIP)
 
 ### Installation:
 - Make sure you have [cava](https://github.com/karlstav/cava), [neofetch](https://github.com/dylanaraps/neofetch), [picom](https://github.com/yshui/picom), [polybar](https://github.com/polybar/polybar) and [rofi](https://github.com/davatorium/rofi) installed on your system.
