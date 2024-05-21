@@ -13,3 +13,4 @@
 - Put the Scripts folder in your HOME directory.
 - Make all the files in the Scripts folder executable by running `chmod +x ~/Scripts/*.sh`
 - The rofi config isn't very good, I'd recommend [this repo](https://github.com/adi1090x/rofi) instead, it's what I'm currently using.
+- To set a wallpaper, use [nitrogen](https://github.com/l3ib/nitrogen) or [feh](https://github.com/derf/feh)
