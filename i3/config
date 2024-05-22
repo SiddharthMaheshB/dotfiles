@@ -46,7 +46,7 @@ exec --no-startup-id nm-applet
 # compositor startup
 exec_always picom -b --config ~/.config/picom/picom.conf
 
-# mouse tapping enable
+# mosue setting changes
 exec_always xinput set-prop "SYNA32A4:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
 exec_always xinput set-prop "SYNA32A4:00 06CB:CE17 Touchpad" "libinput Natural Scrolling Enabled" 1
 
@@ -69,6 +69,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# player control
+bindsym $mod+Control+h exec playerctl previous --player=spotify
+bindsym $mod+Control+k exec playerctl volume 0.1+ --player=spotify
+bindsym $mod+Control+j exec playerctl volume 0.1- --player=spotify
+bindsym $mod+Control+l exec playerctl next -- player=spotify
+bindsym $mod+Control+space exec playerctl play-pause --player=spotify
 
 # start a terminal
 bindsym $mod+Return exec kitty
