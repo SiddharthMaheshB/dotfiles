@@ -57,6 +57,10 @@ exec nitrogen --restore
 exec polybar -r main
 # exec_always --no-startup-id $HOME/polybar-collection/launch.sh
 
+# battery warning
+exec_always --no-startup-id ~/Scripts/i3-battery-popup -L 20 -I 5 -m "Battery Low" -n
+exec_always --no-startup-id ~/Scripts/i3-battery-popup -L 5 -I 1 -m "Battery Critical" -n
+
 # gnome dark theme 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 
@@ -72,13 +76,16 @@ floating_modifier $mod
 
 # player control
 bindsym $mod+Control+h exec playerctl previous --player=spotify
-bindsym $mod+Control+k exec playerctl volume 0.1+ --player=spotify
-bindsym $mod+Control+j exec playerctl volume 0.1- --player=spotify
+bindsym $mod+Control+k exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+Control+j exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym $mod+Control+l exec playerctl next -- player=spotify
 bindsym $mod+Control+space exec playerctl play-pause --player=spotify
 
 # start a terminal
 bindsym $mod+Return exec kitty
+
+# open firefox
+bindsym $mod+Shift+f exec firefox --new-window
 
 # kill focused window
 bindsym $mod+Shift+q kill
