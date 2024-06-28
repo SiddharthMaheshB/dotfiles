@@ -84,14 +84,23 @@ bindsym $mod+Control+space exec playerctl play-pause --player=spotify
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# start a terminal in working directory
+bindsym $mod+Shift+Return exec kitty $(xcwd)
+
 # open firefox
 bindsym $mod+Shift+f exec firefox --new-window
+
+# open nautilus
+bindsym $mod+e exec nautilus --new-window
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # lock screen
 bindsym $mod+Shift+x exec ~/Scripts/lock.sh
+
+# powermenu
+bindsym $mod+Shift+p exec ~/.config/rofi/powermenu/type-4/powermenu.sh
 
 # flameshot GUI
 bindsym Print exec flameshot gui
@@ -109,9 +118,12 @@ bindsym $mod+m exec xrandr \
   --output HDMI-1-0 --mode 1440x900 --pos 1920x0 \
   --output eDP-1    --mode 1920x1080 --panning 1920x1080 --pos 0x0 --primary && polybar -r second
 
+# disable multi monitor
+bindsym $mod+Shift+m exec xrandr --output HDMI-1-0 --off && killall -q polybar && polybar -r main
+
 #brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --min-val=2 -q set 5%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 5%-
+bindsym $mod+b exec --no-startup-id brightnessctl --min-val=2 -q set 5%+
+bindsym $mod+Shift+b exec --no-startup-id brightnessctl -q set 5%-
 
 # change focus
 bindsym $mod+j focus down
@@ -138,10 +150,12 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Mod4+h split h
+# bindsym $mod+Mod4+h split h
+bindsym $mod+Shift+o split h
 
 # split in vertical orientation
-bindsym $mod+Mod4+v split v
+# bindsym $mod+Mod4+v split v
+bindsym $mod+o split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -149,7 +163,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split) 
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -269,8 +283,8 @@ mode "resize" {
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px 
-        bindsym j resize grow height 10 px 
-        bindsym k resize shrink height 10 px 
+        bindsym k resize grow height 10 px 
+        bindsym j resize shrink height 10 px 
         bindsym l resize grow width 10 px 
 
         # same bindings, but for the arrow keys
